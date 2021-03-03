@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>EPA Project</title>
+</head>
+<body>
+    <h1>This is the website</h1>
+    <form id="click">
+        <input type="text" id="message" name="message">
+        <!-- <input type="text" id="username" name="username">
+        <input type="text" id="password" name="password"> -->
+        <input type="submit" value="Click">
+    </form>
+    <form id="getClicks">
+        <input type="submit" value ="Get Clicks">
+    </form>
+    <div id="response"></div>
+    <form id="trash">
+        <input type="submit" value="Trash Database">
+    </form>
+    <script>
+        console.log(document.getElementById('message'))
+        document.getElementById('click').addEventListener('submit', function(event){
+            event.preventDefault();
+            fetch(`/click`, 
+                {
+                headers:
+                    {'Accept':'application/json',
+                     'Content-Type':'application/json'},
+                body: JSON.stringify({message:document.getElementById('message').value,
+            // username:document.getElementById('username').value,
+            // password:document.getElementById('password').value
+            }),
+                method:"POST"
+            })            
+        })
+        document.getElementById('trash').addEventListener('submit', function (event){
+            event.preventDefault();
+            fetch(`/trash`, {method:"POST"})
+        })
+        document.getElementById('getClicks').addEventListener('submit', function (event){
+            event.preventDefault();
+            fetch(`/click`, {method:"GET"})
+            .then(function(res) { return res.json() })
+            .then(function(res) { document.getElementById('response').innerText=JSON.stringify(res)})            
+
+
+            console.log("Clicking Get Clicks")
+        })
+
+    </script>
+</body>

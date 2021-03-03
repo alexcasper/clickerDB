@@ -1,0 +1,16 @@
+{
+  "name": "epaproject",
+  "version": "1.0.0",
+  "description": "epa project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "node index.js"
+  },
+  "author": "casper@ada.ac.uk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}
