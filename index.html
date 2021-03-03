@@ -6,7 +6,9 @@
     <h1>This is the website</h1>
     <form id="click">
         <input type="text" id="message" name="message">
-        <!-- <input type="text" id="username" name="username">
+        <!-- 
+        We could put more here if this form if we wanted    
+        <input type="text" id="username" name="username">
         <input type="text" id="password" name="password"> -->
         <input type="submit" value="Click">
     </form>
@@ -42,8 +44,6 @@
             fetch(`/click`, {method:"GET"})
             .then(function(res) { return res.json() })
             .then(function(res) { document.getElementById('response').innerText=JSON.stringify(res)})            
-
-
             console.log("Clicking Get Clicks")
         })
 

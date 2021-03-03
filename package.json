@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "author": "casper@ada.ac.uk",
   "license": "ISC",

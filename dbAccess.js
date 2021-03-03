@@ -14,9 +14,11 @@ function connect() {
 function trash(db) {
     db.run('DROP TABLE IF EXISTS Clicks',function (err) {
         if (err) { console.error(err) }
-        else { console.log("Dropping Clicks Table")}
+        else { console.log("Dropping Clicks Table")
+        init(db);
+    }
     })
-    init(db);
+    
 }
 
 function init(db) {
@@ -34,7 +36,6 @@ function add(db,req) {
         else { console.log("Adding Message to Table")}
     })
 }
-
 
 function readAll(db,res) {
     db.all('SELECT * FROM Clicks',function (err,rows){

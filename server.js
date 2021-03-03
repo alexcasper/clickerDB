@@ -1,5 +1,5 @@
 var express = require('express')
-var database = require('./database.js')
+var database = require('./dbAccess.js')
 var db = database.connect()
 
 var app = express();
@@ -21,7 +21,7 @@ app.get('/click',function(req,res){
     database.readAll(db,res)
 })
 
-app.listen(3001, function() {
-    console.log("Server Listening at http://localhost:3001")
+app.listen(3000, function() {
+    console.log("Server Listening at http://localhost:3000")
 })
 
